@@ -18,12 +18,12 @@ Ruby is a dynamic programming language with a focus on simplicity and productivi
 
 ## Built-in Ruby Objects
 
-Everything in Ruby is an object. Objects have in-build classes you can call on them.
+Everything in Ruby is an object. Objects have in-build methods you can call on them.
 
 ### Strings
 
 - To represent text
-- Defined with single quotes or double quotes: `'wagon'` or '"wagon"'
+- Defined with single quotes or double quotes: `'wagon'` or `"wagon"`
 
 ```ruby
 "wagon".class        # => String
@@ -34,8 +34,8 @@ Everything in Ruby is an object. Objects have in-build classes you can call on t
 - You can inject Ruby code into a string using interpolation, but in double-quoted strings
 
 ```ruby
-'two" #{1 + 1}'      # => "two" #{1 + 1}"
-"two" #{1 + 1}"      # => "two: 2"
+'two: #{1 + 1}'      # => "two: #{1 + 1}"
+"two: #{1 + 1}"      # => "two: 2"
 ```
 
 - You can convert strings to numbers
@@ -160,11 +160,11 @@ puts "My name is #{first_name} #{last_name}"
 - Concise way to call Ruby code
 - Apply a ruby code to dynamic inputs
 - Defined with **parameters** and called with **arguments**
-- A method always returns a result
+- A method always returns a result, and you can then operate on what is returned
 
 ```ruby
 def full_name(first_name, last_name)
-  name = "#{first_name.capitalize} #{last_name.capitalize}""
+  name = "#{first_name.capitalize} #{last_name.capitalize}"
   return name
 end
 
@@ -172,6 +172,8 @@ puts full_name("boris", "paillard")
 ```
 
 - In the example above, `first_name` and `last_name` were parameters and `"boris"` and `"paillard"` were the arguments
+- We `puts` what what returned from the method
+
 - Can call the method with variables too
 
 ```ruby
@@ -183,3 +185,5 @@ puts full_name(my_first_name, my_last_name)
 - Methods ending with `?` such as `even?` and `start_with?` return a Boolean
 
 ## Conditionals (If/Unless/Else)
+
+
