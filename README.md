@@ -102,7 +102,39 @@ Everything in Ruby is an object. Objects have in-build methods you can call on t
 [3, 5, 1].sort                            # => [1, 3, 5]
 ```
 
-<!-- CRUD -->
+- You access elements in the array based on its **index**, careful, indexes start at 0
+
+```ruby
+beatles = ["john", "paul", "george", "ringo"]
+beatles[0]         # => "john"
+beatles[2]         # => "george"
+```
+
+- You modify an element in the array using its **index** again
+
+```ruby
+beatles = ["john", "alex", "george", "ringo"]
+beatles[1] = "paul"
+p beatles          # => ["john", "paul", "george", "ringo"]
+```
+
+- You add an element to an array by **appending** it or **inserting** it at a given **index**
+
+```ruby
+beatles = ["john", "george"]
+beatles << "ringo"
+beatles.insert(1, "paul")
+p beatles          # => ["john", "paul", "george", "ringo"]
+```
+
+- You delete an element from an array by using its **index** or by using its value
+
+```ruby
+beatles = ["john", "paul", "alex", "george", "arthur", "ringo"]
+beatles.delete_at(2)
+beatles.delete("arthur")
+p beatles          # => ["john", "paul", "george", "ringo"]
+```
 
 ### Ranges
 
