@@ -188,6 +188,9 @@ last_name = "Benoit"
 puts "My name is #{first_name} #{last_name}"
 ```
 
+- By convention, variable names should be in snake_case (lowercase with underscores)
+
+
 ## Methods
 
 - Concise way to call Ruby code multiple times
@@ -213,7 +216,8 @@ my_last_name = "benoit"
 puts full_name(my_first_name, my_last_name)
 ```
 
-- Methods ending with `?` such as `even?` and `start_with?` return a Boolean
+- By convention, method names should be in snake_case (lowercase with underscores)
+- By convention, methods ending with `?` such as `even?` and `start_with?` return a Boolean
 
 ## Flow Control
 
