@@ -97,7 +97,7 @@ Everything in Ruby is an object. Objects have in-build methods you can call on t
 - Has it's own built-in methods
 
 ```ruby
-["paris", "london", "new york"].size      # => 3
+["paris", "london", "new york"].length    # => 3
 ["paris", "london", "new york"].sort      # => ["london", "new york", "paris"]
 [3, 5, 1].sort                            # => [1, 3, 5]
 ```
