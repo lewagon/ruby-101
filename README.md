@@ -187,9 +187,11 @@ puts full_name(my_first_name, my_last_name)
 
 Conditionals and loops change the flow of a Ruby program. Conditionals allow us to execute a certain chunk of code under a specific condition. Loops allow us to execute a chunk of code multiple times. When the program is run, the code is executed from top to bottom, line by line, which is how you should debug in your head.
 
-### Conditionals (If/Unless/Else)
+### Conditionals (If/Unless)
 
 #### If
+
+If conditionals allow us to execute a certain chunk of code if a condition is "thruthy".
 
 ```ruby
 if condition
@@ -199,6 +201,8 @@ end
 
 #### Unless
 
+Unless conditionals allow us to execute a certain chunk of code if a condition is **not** "thruthy".
+
 ```ruby
 unless condition
   # code executed only when condition is not "truthy"
@@ -206,6 +210,8 @@ end
 ```
 
 #### If/Else
+
+If/Else conditionals allow us to execute a certain chunk of code if a condition is "thruthy" **or** another chunk of code if the same condition is **not** "truthy".
 
 ```ruby
 if condition
@@ -223,16 +229,20 @@ age = gets.chomp.to_i
 
 if age >= 18
   puts "You can vote!"
+else
+  puts "You cannot vote!"
 end
 ```
 
 #### If/Elsif/Else
 
+You can have more that one condition in If/Elsif/.../Else conditionals.
+
 ```ruby
 if first_condition
   # code executed only if first condition is "truthy"
 elsif second_condition
-  # code executed only if second_condition is "truthy" and first_codition is not "truthy"
+  # code executed only if second_condition is "truthy" and first_condition is not "truthy"
 elsif third_condition
   # ...
 else
@@ -255,8 +265,56 @@ else
 end
 ```
 
-#### Combining condition
+#### Combining conditions
 
-You can combine condition with `&&` which is the logical AND, or `||` which is the logical OR.
+- You can combine condition with `&&` which is the logical AND, or `||` which is the logical OR.
+- You can negate a condition with a `!` in front of the condition
 
-### While
+### Loops (While/Until/For)
+
+#### While
+
+While loops allow us to execute a chunk of code multiple times while a condition is "truthy".
+
+```ruby
+while condition
+  # executed while condition is truthy
+end
+```
+
+For example, a small Ruby program that replicates the 'Price is Right' game.
+
+```ruby
+price_to_find = 1 + rand(5)
+choice = nil
+
+while (choice != price_to_find)
+  puts "How much (between 1 and 5)?"
+  choice = gets.chomp.to_i
+end
+
+puts "You won!"
+```
+
+#### Until
+
+Until loops allow us to execute a chunk of code multiple times while a condition is **not** "truthy".
+
+
+```ruby
+until condition
+  # executed until condition is truthy
+end
+```
+
+#### For
+
+For loops allow us to execute a chunk of code for a given amount of times, based on the inputs of the for loop.
+
+```ruby
+for num in [1, 2, 3, 4, 5]
+  puts num
+end
+```
+
+In the example above, the for loop will loop 5 times, with num being equal to the corresponding element in the array on each loop.
