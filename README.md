@@ -2,7 +2,7 @@
 
 Ruby is a dynamic programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.
 
-## How to run your code
+## How to run Ruby code
 
 1. In IRB
 
@@ -102,7 +102,7 @@ Everything in Ruby is an object. Objects have in-build methods you can call on t
 [3, 5, 1].sort                            # => [1, 3, 5]
 ```
 
-- You access elements in the array based on its **index**, careful, indexes start at 0
+- You access elements in an array based on its **index**, careful, indexes start at 0
 
 ```ruby
 beatles = ["john", "paul", "george", "ringo"]
@@ -110,7 +110,7 @@ beatles[0]         # => "john"
 beatles[2]         # => "george"
 ```
 
-- You modify an element in the array using its **index** again
+- You modify an element in an array using its **index** again
 
 ```ruby
 beatles = ["john", "alex", "george", "ringo"]
