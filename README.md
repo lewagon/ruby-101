@@ -173,7 +173,6 @@ puts full_name("boris", "paillard")
 
 - In the example above, `first_name` and `last_name` were parameters and `"boris"` and `"paillard"` were the arguments
 - We `puts` what what returned from the method
-
 - Can call the method with variables too
 
 ```ruby
