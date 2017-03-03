@@ -138,7 +138,8 @@ The built in methods are well-documented, don't reinvent the wheel...
 ## Variables
 
 - Allows you to store values to reuse them later
-- You **assign** a value to a varialbe
+- You **assign** a value to a variables
+- Variables can be overwritten and incremented
 
 ```ruby
 age = 21
@@ -157,8 +158,8 @@ puts "My name is #{first_name} #{last_name}"
 
 ## Methods
 
-- Concise way to call Ruby code
-- Apply a ruby code to dynamic inputs
+- Concise way to call Ruby code multiple times
+- Apply the ruby code to dynamic inputs
 - Defined with **parameters** and called with **arguments**
 - A method always returns a result, and you can then operate on what is returned
 
@@ -171,9 +172,8 @@ end
 puts full_name("boris", "paillard")
 ```
 
-- In the example above, `first_name` and `last_name` were parameters and `"boris"` and `"paillard"` were the arguments
-- We `puts` what what returned from the method
-- Can call the method with variables too
+- In the example above, `first_name` and `last_name` were parameters and `"boris"` and `"paillard"` were the arguments, and we `puts` what returned from the method call
+- We can call the method with variables too
 
 ```ruby
 my_first_name = "alex"
@@ -183,6 +183,80 @@ puts full_name(my_first_name, my_last_name)
 
 - Methods ending with `?` such as `even?` and `start_with?` return a Boolean
 
-## Conditionals (If/Unless/Else)
+## Flow Control
 
+Conditionals and loops change the flow of a Ruby program. Conditionals allow us to execute a certain chunk of code under a specific condition. Loops allow us to execute a chunk of code multiple times. When the program is run, the code is executed from top to bottom, line by line, which is how you should debug in your head.
 
+### Conditionals (If/Unless/Else)
+
+#### If
+
+```ruby
+if condition
+  # code executed only when condition is "truthy"
+end
+```
+
+#### Unless
+
+```ruby
+unless condition
+  # code executed only when condition is not "truthy"
+end
+```
+
+#### If/Else
+
+```ruby
+if condition
+  # code executed only when condition is "truthy"
+else
+  # code executed only when condition is not "truthy"
+end
+```
+
+For example, a small Ruby program that checks if you are old enough to vote:
+
+```ruby
+puts "How old are you?"
+age = gets.chomp.to_i
+
+if age >= 18
+  puts "You can vote!"
+end
+```
+
+#### If/Elsif/Else
+
+```ruby
+if first_condition
+  # code executed only if first condition is "truthy"
+elsif second_condition
+  # code executed only if second_condition is "truthy" and first_codition is not "truthy"
+elsif third_condition
+  # ...
+else
+  # code executed if no conditions are "truthy"
+end
+```
+
+For example, a small Ruby program that greets you depending on the hour of the day:
+
+```ruby
+puts "What time is it?"
+hour = gets.chomp.to_i
+
+if hour < 12
+  puts "Good morning!"
+elsif hour >= 12 && hour < 20
+  puts "Good afternoon!"
+else
+  puts "Good night!"
+end
+```
+
+#### Combining condition
+
+You can combine condition with `&&` which is the logical AND, or `||` which is the logical OR.
+
+### While
