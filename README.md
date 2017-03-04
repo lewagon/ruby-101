@@ -106,24 +106,27 @@ Everything in Ruby is an object. Objects have in-build methods you can call on t
 
 ```ruby
 beatles = ["john", "paul", "george", "ringo"]
+
 beatles[0]         # => "john"
 beatles[2]         # => "george"
-```
-
-- You modify an element in an array using its **index** again
-
-```ruby
-beatles = ["john", "alex", "george", "ringo"]
-beatles[1] = "paul"
-p beatles          # => ["john", "paul", "george", "ringo"]
 ```
 
 - You add an element to an array by **appending** it or **inserting** it at a given **index**
 
 ```ruby
 beatles = ["john", "george"]
+
 beatles << "ringo"
 beatles.insert(1, "paul")
+p beatles          # => ["john", "paul", "george", "ringo"]
+```
+
+- You modify an element in an array using its **index** again
+
+```ruby
+beatles = ["john", "alex", "george", "ringo"]
+
+beatles[1] = "paul"
 p beatles          # => ["john", "paul", "george", "ringo"]
 ```
 
@@ -131,6 +134,7 @@ p beatles          # => ["john", "paul", "george", "ringo"]
 
 ```ruby
 beatles = ["john", "paul", "alex", "george", "arthur", "ringo"]
+
 beatles.delete_at(2)
 beatles.delete("arthur")
 p beatles          # => ["john", "paul", "george", "ringo"]
@@ -154,7 +158,60 @@ p beatles          # => ["john", "paul", "george", "ringo"]
 
 ### Hashes
 
-<!-- Hashes -->
+- To represent a dictionary-like collection of unique **keys** and associated **values** (think word => definition).
+- Defined with curly brackets and hash rockets between keys and values
+
+```ruby
+{ "peter" => 24, "mary" => 25, "george" => 22, "emma" => 20 }
+```
+
+- Has it's own built-in methods
+
+```ruby
+capitals = {"france" => "paris", "united kingdom" => "london", "spain" => "madrid" }
+
+capitals.has_key?("france")               # => true
+capitals.keys                             # => ["france", "united kingdom", "spain"]
+capitals.values                           # => ["paris", "london", "madrid"]
+capitals.length                           # => 3
+```
+
+- You access a **value** in a hash using its unique **key**
+
+```ruby
+capitals = {"france" => "paris", "united kingdom" => "london", "spain" => "madrid" }
+
+capitals["france"] # => "paris"
+capitals["spain"]  # => "madrid"
+
+```
+
+- You add a **key/value pair** to a hash by indicating the new unique key and value
+
+```ruby
+capitals = {"france" => "paris", "united kingdom" => "london", "spain" => "madrid" }
+
+capitals["germany"] = "berlin"
+p capitals         # => { "france"=>"paris", "united kingdom"=>"london", "spain"=>"madrid", "germany"=>"berlin"}
+```
+
+- You modify/update a **value** in a hash using its unique **key**
+
+```ruby
+capitals = {"france" => "paris", "united kingdom" => "bristol", "spain" => "madrid" }
+
+capitals["united kingdom"] = "bristol"
+p capitals         # => { "france"=>"paris", "united kingdom"=>"london", "spain"=>"madrid" }
+```
+
+- You delete a key/value pair from a hash using its unique key
+
+```ruby
+capitals = {"france" => "paris", "united kingdom" => "bristol", "spain" => "madrid" }
+
+capitals.delete("spain")
+p capitals         # => { "france"=>"paris", "united kingdom"=>"london" }
+```
 
 ### Built-in methods
 
