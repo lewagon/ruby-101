@@ -46,13 +46,13 @@ Everything in Ruby is an object. Objects have in-build methods you can call on t
 '1984'.to_i.class    # => Fixnum
 ```
 
-### Fixnums
+### Integers
 
 - To represent integers
 - Can do standard arithmetic
 
 ```ruby
-4.class              # => Fixnum
+4.class              # => Integer
 1 + 2                # => 3
 2 * 4                # => 6
 ```
