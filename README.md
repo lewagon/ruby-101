@@ -13,7 +13,7 @@ Ruby is a dynamic programming language with a focus on simplicity and productivi
    Using Ruby files, for example `wagon.rb`. Launch your Ruby script from the terminal with:
 
    ```bash
-   $ ruby path/to/your/file.rb
+   ruby path/to/your/file.rb
    ````
 
 ## Built-in Ruby Objects
