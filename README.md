@@ -6,7 +6,7 @@ Ruby is a dynamic programming language with a focus on simplicity and productivi
 
 1. In IRB
 
-   You can run `$ irb` in the terminal to launch a Ruby interpreter. You can see it as a playground to test things out.
+   You can run `irb` in the terminal to launch a Ruby interpreter. You can see it as a playground to test things out.
 
 2. Using Ruby files
 
