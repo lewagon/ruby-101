@@ -110,6 +110,13 @@ Everything in Ruby is an object. Objects have in-build methods you can call on t
 [3, 5, 1].sort                            # => [1, 3, 5]
 ```
 
+- You can convert strings to arrays
+
+```ruby
+'Change your life and learn to code'.class         # => String
+'Change your life and learn to code'.split         # => ['Change', 'your', 'life', 'and', 'learn', 'to', 'code']
+```
+
 - You access elements in an array based on its **index**, careful, indexes start at 0
 
 ```ruby
