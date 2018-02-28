@@ -46,6 +46,13 @@ Everything in Ruby is an object. Objects have in-build methods you can call on t
 '1984'.to_i.class    # => Fixnum
 ```
 
+- You can convert strings to arrays
+
+```ruby
+'Change your life and learn to code'.class         # => String
+'Change your life and learn to code'.split         # => ['Change', 'your', 'life', 'and', 'learn', 'to', 'code']
+```
+
 ### Integers
 
 - To represent integers
@@ -55,6 +62,7 @@ Everything in Ruby is an object. Objects have in-build methods you can call on t
 4.class              # => Integer
 1 + 2                # => 3
 2 * 4                # => 6
+4 / 2                # => 2
 ```
 
 - Also has custom methods built-in
@@ -114,10 +122,9 @@ beatles[2]         # => "george"
 - You add an element to an array by **appending** it or **inserting** it at a given **index**
 
 ```ruby
-beatles = ["john", "george"]
+beatles = ["john", "paul", "george"]
 
 beatles << "ringo"
-beatles.insert(1, "paul")
 p beatles          # => ["john", "paul", "george", "ringo"]
 ```
 
@@ -140,80 +147,12 @@ beatles.delete("arthur")
 p beatles          # => ["john", "paul", "george", "ringo"]
 ```
 
-### Ranges
-
-- To represent ranges of elements (usually numbers)
-- Defined with `..` between two elements and brackets, `...` to exclude the last element from the range
-
-```ruby
-(1..5).class       # => Range
-(1..5).to_a        # => [1, 2, 3, 4, 5]
-(1...5).to_a       # => [1, 2, 3, 4]
-("a".."e").to_a    # => ["a", "b", "c", "d", "e"]
-```
-
 ### Booleans
 
 - To represent something that is true or false
 
-### Hashes
 
-- To represent a dictionary-like collection of unique **keys** and associated **values** (think word => definition).
-- Defined with curly brackets and hash rockets between keys and values
-
-```ruby
-{ "peter" => 24, "mary" => 25, "george" => 22, "emma" => 20 }
-```
-
-- Has it's own built-in methods
-
-```ruby
-capitals = {"france" => "paris", "united kingdom" => "london", "spain" => "madrid" }
-
-capitals.has_key?("france")               # => true
-capitals.keys                             # => ["france", "united kingdom", "spain"]
-capitals.values                           # => ["paris", "london", "madrid"]
-capitals.length                           # => 3
-```
-
-- You access a **value** in a hash using its unique **key**
-
-```ruby
-capitals = {"france" => "paris", "united kingdom" => "london", "spain" => "madrid" }
-
-capitals["france"] # => "paris"
-capitals["spain"]  # => "madrid"
-
-```
-
-- You add a **key/value pair** to a hash by indicating the new unique key and value
-
-```ruby
-capitals = {"france" => "paris", "united kingdom" => "london", "spain" => "madrid" }
-
-capitals["germany"] = "berlin"
-p capitals         # => { "france"=>"paris", "united kingdom"=>"london", "spain"=>"madrid", "germany"=>"berlin"}
-```
-
-- You modify/update a **value** in a hash using its unique **key**
-
-```ruby
-capitals = {"france" => "paris", "united kingdom" => "bristol", "spain" => "madrid" }
-
-capitals["united kingdom"] = "bristol"
-p capitals         # => { "france"=>"paris", "united kingdom"=>"london", "spain"=>"madrid" }
-```
-
-- You delete a key/value pair from a hash using its unique key
-
-```ruby
-capitals = {"france" => "paris", "united kingdom" => "bristol", "spain" => "madrid" }
-
-capitals.delete("spain")
-p capitals         # => { "france"=>"paris", "united kingdom"=>"london" }
-```
-
-### Built-in methods
+### DOCUMENTATION
 
 The built in methods are well-documented, don't reinvent the wheel...
 
@@ -221,7 +160,6 @@ The built in methods are well-documented, don't reinvent the wheel...
 - [Fixnum methods](https://ruby-doc.org/core-2.3.3/Fixnum.html)
 - [Floats methods](https://ruby-doc.org/core-2.3.3/Float.html)
 - [Array methods](https://ruby-doc.org/core-2.3.3/Array.html)
-- [Hash methods](https://ruby-doc.org/core-2.3.3/Hash.html)
 - [Enumerable methods](https://ruby-doc.org/core-2.3.3/Enumerable.html)
 
 ## Variables
@@ -292,16 +230,6 @@ if condition
 end
 ```
 
-#### Unless
-
-Unless conditionals allow us to execute a certain chunk of code if a condition is **not** "thruthy".
-
-```ruby
-unless condition
-  # code executed only when condition is not "truthy"
-end
-```
-
 #### If/Else
 
 If/Else conditionals allow us to execute a certain chunk of code if a condition is "thruthy" **or** another chunk of code if the same condition is **not** "truthy".
@@ -327,43 +255,7 @@ else
 end
 ```
 
-#### If/Elsif/Else
-
-You can have more that one condition in If/Elsif/.../Else conditionals.
-
-```ruby
-if first_condition
-  # code executed only if first condition is "truthy"
-elsif second_condition
-  # code executed only if second_condition is "truthy" and first_condition is not "truthy"
-elsif third_condition
-  # ...
-else
-  # code executed if no conditions are "truthy"
-end
-```
-
-For example, a small Ruby program that greets you depending on the hour of the day:
-
-```ruby
-puts "What time is it?"
-hour = gets.chomp.to_i
-
-if hour < 12
-  puts "Good morning!"
-elsif hour >= 12 && hour < 20
-  puts "Good afternoon!"
-else
-  puts "Good night!"
-end
-```
-
-#### Combining conditions
-
-- You can combine condition with `&&` which is the logical AND, or `||` which is the logical OR.
-- You can negate a condition with a `!` in front of the condition
-
-### Loops (While/Until/For)
+### Simple loops
 
 #### While
 
@@ -378,8 +270,8 @@ end
 For example, a small Ruby program that replicates the 'Price is Right' game.
 
 ```ruby
-price_to_find = 1 + rand(5)
-choice = nil
+price_to_find = rand(1..5)
+choice = 0 # or `nil`
 
 while (choice != price_to_find)
   puts "How much (between 1 and 5)?"
@@ -389,25 +281,3 @@ end
 puts "You won!"
 ```
 
-#### Until
-
-Until loops allow us to execute a chunk of code multiple times while a condition is **not** "truthy".
-
-
-```ruby
-until condition
-  # executed until condition is truthy
-end
-```
-
-#### For
-
-For loops allow us to execute a chunk of code for a given amount of times, based on the inputs of the for loop.
-
-```ruby
-for num in [1, 2, 3, 4, 5]
-  puts num
-end
-```
-
-In the example above, the for loop will loop 5 times, with num being equal to the corresponding element in the array on each loop.
