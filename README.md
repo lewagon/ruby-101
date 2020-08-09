@@ -18,7 +18,7 @@ Ruby is a dynamic programming language with a focus on simplicity and productivi
 
 ## Built-in Ruby Objects
 
-Everything in Ruby is an object. Objects have in-build methods you can call on them.
+Everything in Ruby is an object. Objects have built-in methods you can call on them.
 
 ### Strings
 
@@ -31,7 +31,7 @@ Everything in Ruby is an object. Objects have in-build methods you can call on t
 "wagon".capitalize   # => "Wagon"
 ```
 
-- You can inject Ruby code into a string using interpolation, but in double-quoted strings
+- You can inject Ruby code into a string using interpolation, but only in double-quoted strings
 
 ```ruby
 'two: #{1 + 1}'      # => "two: #{1 + 1}"
@@ -43,7 +43,7 @@ Everything in Ruby is an object. Objects have in-build methods you can call on t
 ```ruby
 '1984'.class         # => String
 '1984'.to_i          # => 1984
-'1984'.to_i.class    # => Fixnum
+'1984'.to_i.class    # => Integer
 ```
 
 - You can convert strings to arrays
@@ -61,7 +61,7 @@ Everything in Ruby is an object. Objects have in-build methods you can call on t
 ```ruby
 4.class              # => Integer
 1 + 2                # => 3
-2 * 4                # => 6
+2 * 4                # => 8
 4 / 2                # => 2
 ```
 
@@ -95,7 +95,7 @@ Everything in Ruby is an object. Objects have in-build methods you can call on t
 
 ### Arrays
 
-- To represent list of elements, usually of the same type
+- To represent a list of elements, usually of the same type
 - Defined with square brackets around the list of items
 
 ```ruby
@@ -161,18 +161,18 @@ p beatles          # => ["john", "paul", "george", "ringo"]
 
 ### DOCUMENTATION
 
-The built in methods are well-documented, don't reinvent the wheel...
+The built-in methods are well-documented, don't reinvent the wheel...
 
-- [String methods](https://ruby-doc.org/core-2.3.3/String.html)
-- [Fixnum methods](https://ruby-doc.org/core-2.3.3/Fixnum.html)
-- [Floats methods](https://ruby-doc.org/core-2.3.3/Float.html)
-- [Array methods](https://ruby-doc.org/core-2.3.3/Array.html)
-- [Enumerable methods](https://ruby-doc.org/core-2.3.3/Enumerable.html)
+- [String methods](https://ruby-doc.org/core/String.html)
+- [Fixnum methods](https://ruby-doc.org/core/Fixnum.html)
+- [Floats methods](https://ruby-doc.org/core/Float.html)
+- [Array methods](https://ruby-doc.org/core/Array.html)
+- [Enumerable methods](https://ruby-doc.org/core/Enumerable.html)
 
 ## Variables
 
 - Allows you to store values to reuse them later
-- You **assign** a value to a variables
+- You **assign** a value to a variable
 - Variables can be overwritten and incremented
 
 ```ruby
